@@ -1,0 +1,10 @@
+"agentic AI" OR "agentic workforce" + Australia + enterprise
+"employee experience" + ("AI" OR "artificial intelligence") + ("implementation" OR "transformation")
+"Fortune 500" + "AI transformation" + (HR OR "human resources" OR workforce)
+"multi-agent" + enterprise + (workflow OR implementation OR case study)
+"ROI" + ("HR technology" OR "human resources technology") + ("case study" OR "implementation")
+"superworker" OR "super worker" + case study + enterprise
+("barriers to AI adoption" OR "AI implementation challenges") + ("workforce" OR "HR")
+("Chief People Officer" OR "CPO") + ("technology strategy" OR "digital transformation") + "AI"
+("Chief People Officer" OR CPO) + ("Chief Information Officer" OR CIO) + "AI strategy"
+("Deloitte" OR "PwC" OR "EY" OR "KPMG") + ("agentic" OR "AI workforce" OR "human+AI")
