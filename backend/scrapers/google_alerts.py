@@ -1,25 +1,39 @@
 import feedparser
 from pathlib import Path
+from typing import List, Dict
 
 
-def load_alert_queries(file_path: str) -> list[str]:
+def load_alert_queries(file_path: str) -> List[str]:
     with open(file_path, 'r') as f:
-        lines = [line.strip() for line in f if line.strip()]
-    return lines
+        return [line.strip() for line in f if line.strip()]
 
 
-def fetch_google_alerts(query: str):
+def build_alert_feed_url(query: str) -> str:
+    # Build a Google News RSS feed URL from the query.
+    # This is a placeholder; for actual Google Alerts, use the alert-specific feed URL.
+    encoded_query = query.replace(' ', '+')
+    return f"https://news.google.com/rss/search?q={encoded_query}"
+
+
+def fetch_google_alerts(query: str) -> List[Dict]:
     """
-    Placeholder function for fetching Google Alert RSS feed items.
-    Google Alert feeds require a unique feed URL per alert.
-    Integrate with your Google Alerts feed by replacing this stub.
+    Fetch articles for a given query from Google News RSS.
+    Replace this logic with Google Alerts feed parsing if available.
     """
-    # TODO: implement fetching of Google Alerts feed items
-    return []
+    url = build_alert_feed_url(query)
+    feed = feedparser.parse(url)
+    articles = []
+    for entry in feed.entries:
+        articles.append({
+            "title": entry.get("title", ""),
+            "link": entry.get("link", ""),
+            "published": entry.get("published", ""),
+            "summary": entry.get("summary", "")
+        })
+    return articles
 
 
 def main():
-    # Path to the alert queries file relative to backend directory
     file_path = Path(__file__).resolve().parents[1] / 'alert_queries.txt'
     queries = load_alert_queries(file_path)
     for query in queries:
